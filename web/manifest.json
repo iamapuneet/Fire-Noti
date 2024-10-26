@@ -1,0 +1,35 @@
+{
+    "name": "noti",
+    "short_name": "noti",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "FireNoti is a powerful notification management solution that leverages Firebase FCM to deliver real-time push notifications with ease. Designed for developers and businesses, FireNoti provides a seamless way to integrate push notifications into your mobile app, ensuring your users stay informed and engaged. With features like customizable alerts, instant message delivery, and reliable performance, FireNoti makes managing notifications simple and efficient. Whether you need to send updates, alerts, or promotional messages, FireNoti ensures your notifications reach the right audience at the right time.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

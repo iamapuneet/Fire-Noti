@@ -1,0 +1,49 @@
+name: noti
+description: >
+  FireNoti is a powerful notification management solution that leverages Firebase FCM to deliver real-time push notifications with ease. 
+  Designed for developers and businesses, FireNoti provides a seamless way to integrate push notifications into your mobile app, 
+  ensuring your users stay informed and engaged. With features like customizable alerts, instant message delivery, and reliable performance, 
+  FireNoti makes managing notifications simple and efficient. Whether you need to send updates, alerts, or promotional messages, 
+  FireNoti ensures your notifications reach the right audience at the right time.
+
+# This package will not be published to pub.dev
+publish_to: 'none'
+
+# The current version of the package, following semantic versioning.
+version: 1.0.0+1
+
+# Environment SDK specifies the version of Dart SDK required to run the package.
+environment:
+  sdk: ^3.5.3
+
+# Dependencies required for the application to run.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_messaging: ^15.1.3
+  awesome_notifications: ^0.10.0
+  firebase_core: ^3.6.0
+
+# Development dependencies for testing and linting.
+dev_dependencies:
+  # Flutter Test package for running tests in a Flutter environment.
+  flutter_test:
+    sdk: flutter
+
+  # Linting package for enforcing code style and best practices.
+  flutter_lints: ^4.0.0
+
+# Flutter configuration.
+flutter:
+  # Enabling Material Design for the application.
+  uses-material-design: true
+
+  # Assets to be included in the application.
+  assets:
+  # Uncomment and add the paths to your image assets.
+   - image/
+  # - images/a_dot_ham.jpeg
+
+# License information for the package.
+license: GPL-3.0
