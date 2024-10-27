@@ -33,7 +33,7 @@ dependencies:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/puneetsharma5525/FireNoti.git
+   git clone https://github.com/Puneetsharma5525/Fire-Noti.git
    cd FireNoti
 ### Output
 
