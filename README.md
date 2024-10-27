@@ -28,12 +28,38 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_messaging: ^15.1.3
   awesome_notifications: ^0.10.0
-
+```
 ### Installation
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/puneetsharma5525/FireNoti.git
    cd FireNoti
+### Output
 
+![Main Screen](output/main_screen.png)  
+This is the main screen of the Flutter application, showcasing the primary user interface.
 
+![Simple Notification](output/simple_notification.png)  
+Example of a simple notification that alerts the user to a new message or event.
+
+![Sound Notification](output/sound_notiifcation.png)  
+Demonstration of a notification with sound, enhancing user engagement through audio cues.
+
+![Big Image Notification](output/big_image.png)  
+An example of a big image notification.
+
+![Button Notification](output/button_notification.png)  
+Illustration of a notification featuring action buttons, allowing users to respond directly from the notification.
+
+![Reply Notification](output/reply_notification.png)  
+This shows a reply notification, enabling users to quickly respond to messages without opening the app.
+
+![Chat Message Notification](output/chat_message.png)  
+Example of a chat message notification, indicating new messages from contacts.
+
+![Music Notification](output/music_notification.png)  
+Music notification showing playback controls and information about the currently playing track.
+
+![Big Text Notification](output/big_text.png)  
+A big text notification that provides detailed information and context to the user.

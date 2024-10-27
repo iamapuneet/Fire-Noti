@@ -42,7 +42,8 @@ flutter:
   # Assets to be included in the application.
   assets:
   # Uncomment and add the paths to your image assets.
-   - image/
+   - assets/sound1.mp3
+   - assets/sound2.mp3
   # - images/a_dot_ham.jpeg
 
 # License information for the package.

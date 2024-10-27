@@ -1,22 +1,38 @@
 import 'dart:async';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:noti/presentation/main_screen.dart';
 import '../../../main.dart';
-import '../../router/app_router.dart';
+import '../../core/router/app_router.dart';
+import '../model/button_model.dart';
 
 // Private constants and fields
-const String _buttonKey = 'viewOrderButton';
+const String _buttonKey1 = 'newPage';
+const String _buttonKey2 = 'reply';
+const String _buttonKey3 = 'toast';
 
 /// Handles actions when a notification button is pressed.
 @pragma('vm:entry-point')
 Future<void> _onActionReceivedMethod(ReceivedAction event) async {
-  if (event.buttonKeyPressed == _buttonKey) {
+  BuildContext? context = MyApp.navigatorObserver.navigator?.context;
+  if (event.buttonKeyPressed == _buttonKey1) {
     _navigateToNewRequestScreen();
+  } else if (event.buttonKeyPressed == _buttonKey2 && context != null) {
+    showMessage(
+        msg: '''Your Reply is :- ${event.buttonKeyInput} ''', context: context);
+  } else if (context != null && event.buttonKeyPressed == _buttonKey3) {
+    showMessage(
+        msg:
+            '''Why do programmers prefer dark mode?\nBecause light attracts bugs! 🐛💻 ''',
+        context: context);
   }
 }
 
 /// Service for handling notifications using Awesome Notifications package.
 class AwesomeNotificationService {
+  final List<ButtonModel>? buttonList;
+  AwesomeNotificationService({this.buttonList});
+
   /// Creates a notification with optional action buttons and a big picture.
   ///
   /// [id] - The ID for the notification (default is an empty string).
@@ -24,21 +40,59 @@ class AwesomeNotificationService {
   /// [title] - The title of the notification.
   /// [body] - The body content of the notification.
   /// [bigPicture] - The URL or asset path of the big picture (optional).
-  /// [showButton] - If true, shows an action button in the notification.
+  /// [timeoutAfter] - Duration after which the notification should be dismissed (optional).
+  /// [payload] - Custom payload data (optional).
+  /// [buttonList] - List of action buttons for the notification (optional).
+  /// [wakeUpScreen] - If true, wakes up the screen when the notification is received.
+  /// [notificationLayout] - The layout of the notification.
   /// [channelKey] - The channel key for categorizing the notification.
   Future<void> createNotification({
     String? id,
     int? uid,
     String? title,
+    bool locked = false,
     String? body,
     String? bigPicture,
-    bool showButton = false,
+    String? customSound,
+    String? largeIcon,
+    bool repeats = false,
+    DateTime? scheduledTime,
+    bool preciseAlarm = false,
+    Duration? timeoutAfter,
+    Map<String, String?>? payload,
     bool wakeUpScreen = false,
+    bool allowWhileIdle = false,
+    NotificationLayout notificationLayout = NotificationLayout.Default,
     required String channelKey,
   }) async {
+    NotificationSchedule? schedule;
+    if (scheduledTime != null) {
+      String localTimeZone =
+          await AwesomeNotifications().getLocalTimeZoneIdentifier();
+
+      // Create the notification calendar instance
+      schedule = NotificationCalendar(
+        timeZone: localTimeZone,
+        year: scheduledTime.year,
+        month: scheduledTime.month,
+        day: scheduledTime.day,
+        hour: scheduledTime.hour,
+        minute: scheduledTime.minute,
+        second: scheduledTime.second,
+        millisecond: scheduledTime.millisecond,
+        allowWhileIdle: allowWhileIdle,
+        repeats: repeats,
+        preciseAlarm: preciseAlarm,
+      );
+    }
+    // Start listening for notification events
     _startListeningNotificationEvents();
+
+    // Build action buttons from the buttonList
     List<NotificationActionButton>? actionButtons =
-        _buildActionButtons(showButton);
+        _buildActionButtons(buttonList: buttonList);
+
+    // Create the notification
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: uid ?? 0,
@@ -47,10 +101,16 @@ class AwesomeNotificationService {
         body: body,
         wakeUpScreen: wakeUpScreen,
         bigPicture: bigPicture,
+        largeIcon: largeIcon,
+        payload: payload,
+        locked: locked,
+        timeoutAfter: timeoutAfter,
+        customSound: customSound,
         notificationLayout: bigPicture != null
             ? NotificationLayout.BigPicture
-            : NotificationLayout.Default,
+            : notificationLayout,
       ),
+      schedule: schedule,
       actionButtons: actionButtons,
     );
   }
@@ -162,8 +222,6 @@ class AwesomeNotificationService {
     await AwesomeNotifications().requestPermissionToSendNotifications();
   }
 
-  // Private helper methods
-
   /// Starts listening for notification action events.
   Future<void> _startListeningNotificationEvents() {
     return AwesomeNotifications().setListeners(
@@ -173,18 +231,52 @@ class AwesomeNotificationService {
 
   /// Builds action buttons for notifications if required.
   ///
-  /// [showButton] - If true, includes an action button.
-  List<NotificationActionButton>? _buildActionButtons(bool showButton) {
-    if (showButton) {
-      return [
-        NotificationActionButton(
-          key: _buttonKey,
-          label: 'View Screen',
-          color: Colors.amber,
-        ),
-      ];
+  /// [buttonModel] - A list of ButtonModel instances to create the action buttons.
+  List<NotificationActionButton>? _buildActionButtons(
+      {List<ButtonModel>? buttonList}) {
+    if (buttonList?.isNotEmpty == true) {
+      return buttonList?.map((element) {
+        return NotificationActionButton(
+          key: element.key,
+          label: element.label,
+          color: element.color,
+          icon: element.icon,
+          actionType: element.actionType,
+          autoDismissible: element.autoDismissible,
+          enabled: element.enabled,
+          requireInputText: element.requireInputText,
+          showInCompactView: element.showInCompactView,
+          isDangerousOption: element.isDangerousOption,
+        );
+      }).toList();
     }
+
     return null;
+  }
+
+  NotificationActionButton createButton({
+    required ButtonType buttonType,
+    required String buttonKey,
+    required String label,
+    Color? color,
+    String? icon,
+    bool autoDismissible = true,
+    bool enabled = true,
+  }) {
+    return NotificationActionButton(
+      key: buttonKey,
+      label: label,
+      color: color,
+      icon: icon,
+      actionType: buttonType == ButtonType.custom
+          ? ActionType.KeepOnTop
+          : ActionType.Default,
+      autoDismissible: autoDismissible,
+      enabled: enabled,
+      requireInputText: buttonType == ButtonType.message,
+      showInCompactView: buttonType != ButtonType.custom,
+      isDangerousOption: buttonType == ButtonType.custom,
+    );
   }
 }
 

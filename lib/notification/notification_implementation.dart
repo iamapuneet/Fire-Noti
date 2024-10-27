@@ -1,8 +1,8 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:noti/core/Notification/uuid.dart';
-import '../router/app_router.dart';
+import 'package:noti/notification/uuid.dart';
+import '../core/router/app_router.dart';
 import 'awesome_notification/awesome_notification_service.dart';
 import 'firebase_messaging/firebase_initialization.dart';
 import 'firebase_messaging/foreground_message.dart';
@@ -17,7 +17,7 @@ class NotificationImplementation {
   final AwesomeChannelService awesomeChannelService;
 
   // Define channel keys
-  final String _warningSound = 'warning';
+  final String _warningKey = 'warning';
   final String _channelKey1 = 'normal';
 
   /// Constructor to initialize [NotificationImplementation].
@@ -29,8 +29,8 @@ class NotificationImplementation {
   Future<void> initialize() async {
     // Initialize Awesome Notifications
     await awesomeChannelService.initializeChannels(
-      channels: _createNotificationChannels(),
-    );
+        channels: _createNotificationChannels(),
+        channelGroups: _createNotificationGroups());
   }
 
   /// Creates notification channels for the application.
@@ -39,7 +39,7 @@ class NotificationImplementation {
       awesomeChannelService.createChannel(
         soundSource: awesomeChannelService.sound,
         criticalAlerts: true,
-        channelKey: _warningSound,
+        channelKey: _warningKey,
         channelName: "Warning Notifications",
         channelDescription: "Notification for new orders.",
         ledColor: Colors.green,
@@ -50,7 +50,6 @@ class NotificationImplementation {
         defaultRingtoneType: DefaultRingtoneType.Notification,
         onlyAlertOnce: true,
         groupKey: 'warning_group',
-
       ),
       awesomeChannelService.createChannel(
         criticalAlerts: true,
@@ -62,6 +61,16 @@ class NotificationImplementation {
         importance: NotificationImportance.Max,
         channelShowBadge: true,
         groupKey: 'normal_group',
+      ),
+    ];
+  }
+
+  /// Creates notification channel groups for the application.
+  List<NotificationChannelGroup> _createNotificationGroups() {
+    return [
+      awesomeChannelService.notificationChannelGroup(
+        channelGroupName: _warningKey,
+        channelGroupKey: _warningKey,
       ),
     ];
   }

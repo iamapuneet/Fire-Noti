@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'core/Notification/awesome_notification/notification_channel_service.dart';
-import 'core/Notification/notification_implementation.dart';
 import 'core/router/app_router.dart';
 // 🚨 Removed the import for security
 import 'firebase_options.dart';
+import 'notification/awesome_notification/notification_channel_service.dart';
+import 'notification/notification_implementation.dart';
 
 // 🔒 We have removed the firebase_options.dart file for security purposes.
 // 📥 Please remember to add the google-services.json file.
@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
         notificationIcon: icon,
         sound: sound,
       ),
+
     );
     notification.initialize();
     await notification.fcmInitialize(context);

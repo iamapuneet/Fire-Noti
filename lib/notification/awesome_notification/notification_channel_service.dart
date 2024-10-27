@@ -16,7 +16,7 @@ class AwesomeChannelService {
   /// [sound] represents the sound source for notifications.
   /// [notificationIcon] represents the icon path used for the notifications.
   AwesomeChannelService({
-      this.sound,
+    this.sound,
     this.notificationIcon,
   });
 
@@ -60,16 +60,29 @@ class AwesomeChannelService {
       channelName: channelName,
       channelDescription: channelDescription,
       importance: importance,
-      soundSource: soundSource ?? sound,
-      ledColor: ledColor ?? Colors.green,
-      defaultColor: defaultColor ?? Colors.red,
+      soundSource: soundSource,
+      ledColor: ledColor ?? Colors.brown,
+      defaultColor: defaultColor ?? Colors.brown,
       criticalAlerts: criticalAlerts,
       channelShowBadge: channelShowBadge,
       icon: notificationIcon,
       locked: locked,
       onlyAlertOnce: onlyAlertOnce,
-        groupKey:groupKey,
-        defaultRingtoneType:defaultRingtoneType,
+      groupKey: groupKey,
+      defaultRingtoneType: defaultRingtoneType,
+    );
+  }
+
+  /// Creates and returns a generic notification channel group configuration.
+  ///
+  /// This helper method is used to create a channel with standard settings.
+  NotificationChannelGroup notificationChannelGroup({
+    required String channelGroupKey,
+    required String channelGroupName,
+  }) {
+    return NotificationChannelGroup(
+      channelGroupKey: channelGroupKey,
+      channelGroupName: channelGroupName,
     );
   }
 }

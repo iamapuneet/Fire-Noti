@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:noti/core/Notification/firebase_messaging/notification_permissions.dart';
+
+import '../notification/firebase_messaging/notification_permissions.dart';
 
 void requestNotificationPermission({
   required Function(String) onSuccess,
