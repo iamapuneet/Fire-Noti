@@ -18,25 +18,25 @@ class NotificationCalendar extends NotificationSchedule {
   });
 
   /// The year for the scheduled notification.
-  final int year;
+  int year;
 
   /// The month for the scheduled notification.
-  final int month;
+   int month;
 
   /// The day for the scheduled notification.
-  final int day;
+   int day;
 
   /// The hour for the scheduled notification.
-  final int hour;
+   int hour;
 
   /// The minute for the scheduled notification.
-  final int minute;
+   int minute;
 
   /// The second for the scheduled notification.
-  final int second;
+   int second;
 
   /// The millisecond for the scheduled notification.
-  final int millisecond;
+   int millisecond;
 
   @override
   Map<String, dynamic> toMap() {
