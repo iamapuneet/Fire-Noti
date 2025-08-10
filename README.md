@@ -10,6 +10,26 @@ FireNoti is a Flutter-based mobile application that leverages Firebase Cloud Mes
 - **Efficient Message Delivery**: Ensures reliable and timely notification delivery.
 - **User Engagement**: Boosts user engagement with interactive notifications.
 
+# Fire-Noti Project Contribution Acknowledgement
+
+<p align="left">
+  <img src="https://avatars.githubusercontent.com/u/76566013?v=4" alt="Imran's Avatar" width="40" height="40" style="border-radius:50%;">
+</p>
+
+We would like to acknowledge the valuable contributions made by **Imran** to the Fire-Noti project.
+
+## Updates by Imran
+
+- **iOS Project Configuration and Assets**
+  - Added CocoaPods support by creating a `Podfile` and including necessary configurations in `Debug.xcconfig` and `Release.xcconfig`.
+  - Updated `Runner.xcodeproj` to include Pods frameworks and configurations.
+  - Added new app icon images to `Assets.xcassets` and updated `Contents.json` for proper asset management.
+  - Modified `Info.plist` to include user tracking usage description and background modes for notifications.
+  - Refactored `NotificationCalendar` class to allow mutable properties: year, month, day, hour, minute, second, and millisecond.
+
+Thank you, Imran, for your dedication and excellent work on improving the Fire-Noti project!
+
+
 ## Getting Started
 
 ### Prerequisites
