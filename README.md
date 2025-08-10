@@ -55,31 +55,32 @@ dependencies:
    ```bash
    git clone https://github.com/Puneetsharma5525/Fire-Noti.git
    cd FireNoti
-### Output
+### Android Output
 
-<img src="output/main_screen.png" alt="Main Screen" width="400" />
-This is the main screen of the Flutter application, showcasing the primary user interface.
+<img src="output/main_screen.png" alt="Main Screen" width="300" />
+<p>This is the main screen of the Flutter application, showcasing the primary user interface.</p>
 
-![Simple Notification](output/simple_notification.png)  
-Example of a simple notification that alerts the user to a new message or event.
+<img src="output/simple_notification.png" alt="Simple Notification" width="300" />
+<p>Example of a simple notification that alerts the user to a new message or event.</p>
 
-![Sound Notification](output/sound_notiifcation.png)  
-Demonstration of a notification with sound, enhancing user engagement through audio cues.
+<img src="output/sound_notiifcation.png" alt="Sound Notification" width="300" />
+<p>Demonstration of a notification with sound, enhancing user engagement through audio cues.</p>
 
-![Big Image Notification](output/big_image.png)  
-An example of a big image notification.
+<img src="output/big_image.png" alt="Big Image Notification" width="300" />
+<p>An example of a big image notification.</p>
 
-![Button Notification](output/button_notification.png)  
-Illustration of a notification featuring action buttons, allowing users to respond directly from the notification.
+<img src="output/button_notification.png" alt="Button Notification" width="300" />
+<p>Illustration of a notification featuring action buttons, allowing users to respond directly from the notification.</p>
 
-![Reply Notification](output/reply_notification.png)  
-This shows a reply notification, enabling users to quickly respond to messages without opening the app.
+<img src="output/reply_notification.png" alt="Reply Notification" width="300" />
+<p>This shows a reply notification, enabling users to quickly respond to messages without opening the app.</p>
 
-![Chat Message Notification](output/chat_message.png)  
-Example of a chat message notification, indicating new messages from contacts.
+<img src="output/chat_message.png" alt="Chat Message Notification" width="300" />
+<p>Example of a chat message notification, indicating new messages from contacts.</p>
 
-![Music Notification](output/music_notification.png)  
-Music notification showing playback controls and information about the currently playing track.
+<img src="output/music_notification.png" alt="Music Notification" width="300" />
+<p>Music notification showing playback controls and information about the currently playing track.</p>
 
-![Big Text Notification](output/big_text.png)  
-A big text notification that provides detailed information and context to the user.
+<img src="output/big_text.png" alt="Big Text Notification" width="300" />
+<p>A big text notification that provides detailed information and context to the user.</p>
+
