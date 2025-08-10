@@ -57,7 +57,7 @@ dependencies:
    cd FireNoti
 ### Output
 
-![Main Screen](output/main_screen.png)  
+<img src="output/main_screen.png" alt="Main Screen" width="400" />
 This is the main screen of the Flutter application, showcasing the primary user interface.
 
 ![Simple Notification](output/simple_notification.png)  
