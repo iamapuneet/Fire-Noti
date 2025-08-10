@@ -56,31 +56,29 @@ dependencies:
    git clone https://github.com/Puneetsharma5525/Fire-Noti.git
    cd FireNoti
 ### Android Output
-
-<img src="output/main_screen.png" alt="Main Screen" width="300" />
+<img src="output/main_screen.png" alt="Main Screen" width="250" />
 <p>This is the main screen of the Flutter application, showcasing the primary user interface.</p>
 
-<img src="output/simple_notification.png" alt="Simple Notification" width="300" />
+<img src="output/simple_notification.png" alt="Simple Notification" width="250" />
 <p>Example of a simple notification that alerts the user to a new message or event.</p>
 
-<img src="output/sound_notiifcation.png" alt="Sound Notification" width="300" />
+<img src="output/sound_notiifcation.png" alt="Sound Notification" width="250" />
 <p>Demonstration of a notification with sound, enhancing user engagement through audio cues.</p>
 
-<img src="output/big_image.png" alt="Big Image Notification" width="300" />
+<img src="output/big_image.png" alt="Big Image Notification" width="250" />
 <p>An example of a big image notification.</p>
 
-<img src="output/button_notification.png" alt="Button Notification" width="300" />
+<img src="output/button_notification.png" alt="Button Notification" width="250" />
 <p>Illustration of a notification featuring action buttons, allowing users to respond directly from the notification.</p>
 
-<img src="output/reply_notification.png" alt="Reply Notification" width="300" />
+<img src="output/reply_notification.png" alt="Reply Notification" width="250" />
 <p>This shows a reply notification, enabling users to quickly respond to messages without opening the app.</p>
 
-<img src="output/chat_message.png" alt="Chat Message Notification" width="300" />
+<img src="output/chat_message.png" alt="Chat Message Notification" width="250" />
 <p>Example of a chat message notification, indicating new messages from contacts.</p>
 
-<img src="output/music_notification.png" alt="Music Notification" width="300" />
+<img src="output/music_notification.png" alt="Music Notification" width="250" />
 <p>Music notification showing playback controls and information about the currently playing track.</p>
 
-<img src="output/big_text.png" alt="Big Text Notification" width="300" />
+<img src="output/big_text.png" alt="Big Text Notification" width="250" />
 <p>A big text notification that provides detailed information and context to the user.</p>
-
