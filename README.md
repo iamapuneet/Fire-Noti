@@ -13,7 +13,7 @@ FireNoti is a Flutter-based mobile application that leverages Firebase Cloud Mes
 # Fire-Noti Project Contribution Acknowledgement
 
 <p align="left">
-  <img src="https://avatars.githubusercontent.com/u/76566013?v=4" alt="Imran's Avatar" width="40" height="40" style="border-radius:50%;">
+  <img src="https://avatars.githubusercontent.com/u/76566013?v=4" alt="Imran's Avatar" width="40" height="40" style="border-radius:50%; border: 2px solid grey;">
 </p>
 
 We would like to acknowledge the valuable contributions made by **Imran** to the Fire-Noti project.
