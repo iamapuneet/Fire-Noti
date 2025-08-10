@@ -82,3 +82,36 @@ dependencies:
 
 <img src="output/big_text.png" alt="Big Text Notification" width="250" />
 <p>A big text notification that provides detailed information and context to the user.</p>
+
+### Simulator Output
+
+### 1. Home Screen with App Icon and Badge  
+<img src="output/Simulator1.png" alt="Home Screen with App Icon and Badge" width="250" />  
+The main home screen of the app displays the **FireNoti** app icon, app name, and notification badge on iOS.
+
+---
+
+### 2. Notification with Image  
+<img src="output/Simulator2.png" alt="Notification with Image" width="250" />  
+This shows a Flutter alert notification featuring an image alongside the notification message on iOS.
+
+---
+
+### 3. Notification with Logo and Image  
+<img src="output/Simulator3.png" alt="Notification with Logo and Image" width="250" />  
+Here, the notification displays both a logo and a large image, providing a rich notification experience on iOS.
+
+---
+
+### 4. Home Screen with Various Notification Types  
+<img src="output/Simulator4.png" alt="Various Notifications Demo" width="250" />  
+The app's home screen demonstrates different notification types available on iOS, including:  
+- Simple Notification  
+- Sound Notification  
+- Big Image Notification  
+- Button Notification  
+- Reply Message Notification  
+- Scheduled Notification  
+- Music Notification  
+- Big Text Notification  
+
